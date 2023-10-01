@@ -1,0 +1,336 @@
+.preview {
+    padding-top: 0;
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            padding-top: toRem(90);
+        }
+        @media (max-width: $mobile) {
+            padding-top: toRem(80);
+        }
+    }
+    &__content {
+        max-width: toRem(538);
+    }
+    &__title {
+        display: flex;
+        flex-direction: column;
+        font-size: toRem(48);
+        line-height: 133.333333%; /* 64/48 */
+        @media (max-width: em(1300)) {
+            font-size: toRem(36);
+            & span:nth-child(1) img {
+                width: toRem(150);
+                height: toRem(50);
+            }
+            & span:nth-child(3) img {
+                width: toRem(130);
+                height: toRem(55);
+            }
+        }
+        @media (max-width: $tablet) {
+            text-align: center;
+        }
+        @media (max-width: $mobile) {
+            font-size: toRem(32);
+        }
+        @media (max-width: $mobileSmall) {
+            font-size: toRem(27);
+            & span:nth-child(1) img {
+                width: toRem(120);
+                height: toRem(40);
+            }
+            & span:nth-child(3) img {
+                width: toRem(110);
+                height: toRem(45);
+            }
+        }
+        @media (max-width: em(360)) {
+            font-size: toRem(24);
+            & span:nth-child(1) img {
+                width: toRem(100);
+                height: toRem(30);
+            }
+            & span:nth-child(3) img {
+                width: toRem(90);
+                height: toRem(35);
+            }
+        }
+    }
+    &__text {
+        line-height: 137.5%; /* 22/16 */
+        @media (max-width: $tablet) {
+            text-align: center;
+        }
+    }
+    &__button,
+    &__text {
+        margin-top: toRem(48);
+        @media (max-width: em(1300)) {
+            margin-top: toRem(20);
+        }
+    }
+    &__button {
+        @media (max-width: $tablet) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &__img {
+        @media (max-width: $tablet) {
+            margin-top: toRem(20);
+        }
+        & img {
+            @media (max-width: em(1300)) {
+                width: toRem(470);
+                height: toRem(680);
+            }
+            @media (max-width: $mobile) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+.phones {
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__all {
+        display: flex;
+        align-items: center;
+        column-gap: toRem(5);
+        color: $dark;
+        &:hover svg {
+            transition: all $transition;
+        }
+        @media (any-hover: hover) {
+            &:hover svg {
+                transform: translateX(toRem(5));
+            }
+        }
+    }
+}
+
+.devices {
+    &__title {
+        text-align: center;
+    }
+    &__filters {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: toRem(16);
+        overflow-x: auto;
+        padding: toRem(12) 0;
+        margin-top: toRem(12);
+        @media (max-width: $mobile) {
+            justify-content: start;
+            margin: toRem(12) toRem(-15) 0;
+            padding: toRem(12) toRem(15);
+        }
+    }
+    &__filter {
+        text-transform: capitalize;
+        white-space: nowrap;
+        @media (max-width: $mobile) {
+            height: toRem(38);
+        }
+        &-active {
+            background-color: $dark;
+            color: #fff;
+        }
+    }
+}
+
+.trailers {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(24);
+        @media (min-width: em(992)) {
+            flex-direction: row;
+        }
+    }
+}
+.trailer-card {
+    position: relative;
+    border-radius: $radius;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 0 $radius 0 $radius;
+    height: toRem(500);
+    @media (min-width: em(992)) {
+        width: toRem(88);
+        height: toRem(480);
+        transition: all $transition;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00000056;
+            z-index: 1;
+            transition: background-color $transition;
+        }
+    }
+    @media (max-width: $mobile) {
+        height: toRem(300);
+    }
+    @media (max-width: $mobileSmall) {
+        height: toRem(200);
+    }
+    &-active {
+        width: 100%;
+        cursor: initial;
+        border-radius: 0 $radius 0 $radius;
+        &::before {
+            display: none;
+        }
+    }
+    @media (any-hover: hover) {
+        &:hover::before {
+            background-color: transparent;
+        }
+    }
+    &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        @media (min-width: em(992)) {
+            filter: blur(toRem(2));
+        }
+    }
+
+    &-active &__image {
+        filter: none;
+    }
+    &__box {
+        position: absolute;
+        z-index: 1;
+        @media (max-width: $tablet) {
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            & span {
+                display: inline-block;
+                width: fit-content;
+                background-color: #fff;
+                padding: toRem(5) toRem(10);
+                border-radius: 0 0 toRem(5) 0;
+                color: $dark;
+            }
+        }
+    }
+
+    &:not(&-active) &__box {
+        @media (min-width: em(992)) {
+            left: 50%;
+            bottom: 50%;
+            transform: translate(-50%, 50%) scale(-1, -1);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            white-space: nowrap;
+        }
+    }
+
+    &-active &__box {
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        & span {
+            display: inline-block;
+            width: fit-content;
+            background-color: #fff;
+            padding: toRem(5) toRem(10);
+            border-radius: 0 0 toRem(5) 0;
+            color: $dark;
+        }
+    }
+    &__title {
+        color: #fff;
+        font-weight: 500;
+        font-size: toRem(24);
+        @media (max-width: $mobile) {
+            font-size: toRem(17);
+        }
+    }
+    &__subtitle {
+        font-size: toRem(16);
+        font-weight: 400;
+        @media (max-width: $mobile) {
+            font-size: toRem(14);
+        }
+    }
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        padding: toRem(5);
+        border-radius: toRem(5) 0 0 0;
+        z-index: 1;
+    }
+    &__btn {
+        @media (max-width: $mobile) {
+            font-size: toRem(14);
+            height: toRem(38);
+            padding: toRem(10);
+        }
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            background-color: #00000070;
+            z-index: 1;
+            transition: all $transition;
+        }
+        & img {
+            position: relative;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.7);
+            transition: all $transition;
+            z-index: 1;
+        }
+        @media (any-hover: hover) {
+            &:hover::before {
+                visibility: visible;
+                opacity: 1;
+            }
+            &:hover img {
+                visibility: visible;
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}

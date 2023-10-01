@@ -1,0 +1,124 @@
+.header {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	padding: toRem(40) 0 toRem(20);
+	transition: all 0.3s ease-out;
+	z-index: 50;
+	.header-active & {
+		padding: toRem(10);
+		background-color: $dark;
+	}
+	@keyframes slideIn {
+		0% {
+			transform: translateY(-100%);
+		}
+
+		100% {
+			transform: translateY(0);
+		}
+	}
+	@media (max-width: em(1300)) {
+		top: 0;
+		padding: toRem(10) 0;
+	}
+	@media (max-width: $mobile) {
+		.header-active & {
+			padding: toRem(5);
+		}
+	}
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: toRem(24);
+		@media (max-width: $mobile) {
+			column-gap: toRem(10);
+		}
+	}
+	&__logo {
+		transition: color $transition;
+		.header-active & {
+			color: rgba(255, 255, 255, 0.76);
+		}
+	}
+	&__panel {
+		display: flex;
+		align-items: center;
+		column-gap: toRem(24);
+		height: 100%;
+		@media (max-width: $mobile) {
+			display: grid;
+			grid-template-areas: "b p s m";
+			column-gap: toRem(10);
+		}
+	}
+	&__search {
+		width: toRem(344);
+		height: 100%;
+		@media (max-width: $pc) {
+			width: auto;
+		}
+	}
+	&__icon {
+		transition: all $transition;
+		.header-active & {
+			width: toRem(40);
+			height: toRem(40);
+		}
+		@media (max-width: $mobile) {
+			.header-active & {
+				width: toRem(35);
+				height: toRem(35);
+			}
+		}
+		@media (max-width: $mobile) {
+			&:nth-child(1) {
+				grid-area: s;
+			}
+			&:nth-child(2) {
+				grid-area: b;
+			}
+			&:nth-child(3) {
+				grid-area: p;
+			}
+			&:nth-child(4) {
+				grid-area: m;
+			}
+		}
+	}
+}
+
+.menu {
+	&__list {
+		display: flex;
+		align-items: center;
+		column-gap: toRem(24);
+	}
+	&__link {
+		transition: opacity $transition;
+		.header-active & {
+			color: #fff;
+		}
+		&-active {
+			color: $dark;
+			font-weight: 500;
+		}
+		&-arrow {
+			display: flex;
+			align-items: center;
+			column-gap: toRem(5);
+			& svg {
+				width: toRem(11);
+				height: toRem(6);
+				transform: translateY(toRem(-3));
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover:not(&-active) {
+				opacity: 0.8;
+			}
+		}
+	}
+}

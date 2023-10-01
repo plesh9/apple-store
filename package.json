@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.6",
+    "@szhsin/react-accordion": "^1.2.3",
     "@types/node": "20.6.5",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
+    "@types/react-redux": "^7.1.26",
+    "axios": "^1.5.1",
     "next": "13.5.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-loader-spinner": "^5.4.5",
+    "react-redux": "^8.1.2",
+    "sass": "^1.68.0",
     "typescript": "5.2.2"
   }
 }

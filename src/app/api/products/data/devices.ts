@@ -1,0 +1,68 @@
+import { IProduct } from "@/types";
+
+export const devices: IProduct[] = [
+        {
+                id: "1",
+                name: "Apple iPhone 11",
+                price: "950$",
+                img: "https://i.allo.ua/media/catalog/product/cache/3/image/434x494/602f0fa2c1f0d1ba5e241f914e856ff9/4/8/48559a6ce9a4251b3bd0f4a6fde96a9e_1.jpg",
+                description: "Description for iPhone 14 Pro",
+                category: "phones",
+        },
+        {
+                id: "2",
+                name: "Apple HomePod mini",
+                price: "120$",
+                img: "https://i.allo.ua/media/catalog/product/cache/3/image/434x494/602f0fa2c1f0d1ba5e241f914e856ff9/s/o/sound_homepod_white__e5a2pshb9l26_large_2x_1_.jpg",
+                description: "Купить HomePod mini (2020) — значит получить уменьшенную и доступную версию переносного HomePod, которая получает знакомый функциональный набор и достаточно эргономичный корпус.",
+                category: "entertainment",
+        },
+        {
+                id: "3",
+                name: "MacBook Pro 13",
+                price: "2000$",
+                img: "https://i.allo.ua/media/catalog/product/cache/3/image/434x494/602f0fa2c1f0d1ba5e241f914e856ff9/7/3/73_4000_result_6_1.jpg",
+                description: "Apple стремительными шагами движется к полному переходу на процессоры собственного производства. С каждым годом пользователи могут ознакомиться с новыми и новыми устройствами на базе Apple Silicone. Компания Apple представила на WWDC 2022 году обновленный MacBook Pro 13 256GB Silver на базе процессора Apple M2. Внешние изменения модель базового поколения профессиональных компьютеров не претерпела, однако разработчики хорошо прокачали внутреннюю оснастку, а прежде всего процессор и добавили операционную систему нового поколения macOS 13 Ventura. Стоит ли купить Apple MacBook Pro 13 256GB Silver M2 2022 и что принесет пользователям переход на новую версию процессора? Предлагаем разобраться вместе с командой сети магазинов Ябко.",
+                category: "laptops",
+        },
+        {
+                id: "4",
+                name: "Apple Watch SE GPS",
+                price: "350$",
+                img: "https://i.allo.ua/media/catalog/product/cache/3/image/434x494/602f0fa2c1f0d1ba5e241f914e856ff9/m/p/mplv3ref_vw_pf_watch-44-alum-starlight-nc-se_vw_pf_wf_co.jpg",
+                description: "Apple Watch SE — официальная линейка бюджетных умных часов от американской компании, анонсированная 15 сентября 2020 года на ежегодной презентации Apple Event, которая в этом году прошла в онлайн-формате из-за вспышки пандемии Covid-19. Apple Watch SE работают под управлением обновленной операционной системы watchOS 7, и разработчики утверждают, что устройство будет функционировать в 2 раза быстрее, чем модель Series 3, которую считают самой доступной на современной цифровом рынке.",
+                category: "wearables",
+        },
+        {
+                id: "5",
+                name: "Apple AirPods 3",
+                price: "250$",
+                img: "https://i.allo.ua/media/catalog/product/cache/3/image/434x494/602f0fa2c1f0d1ba5e241f914e856ff9/2/8/285470238.jpg",
+                description: "Ну что же, друзья, приветствуйте новинку — оригинальные наушники Apple AirPods 3 with Lightning Charging Case в переосмысленном формате. Лучшие инженеры и дизайнеры из долины Купертино не покладая рук работали над созданием третьего поколения мегапопулярных беспроводных наушников. Команда Ябко также приятно удивлена ​​представленной новинкой, на которую все так долго ждали :)",
+                category: "audio",
+        },
+        {
+                id: "6",
+                name: "MacBook Air 15",
+                price: "1500$",
+                img: "https://i.allo.ua/media/catalog/product/cache/3/image/434x494/602f0fa2c1f0d1ba5e241f914e856ff9/m/b/mba15-spacegray-gallery1-202306_result_1.jpg",
+                description: "Новый MacBook Air располагает всем, что нужно для максимально продуктивной работы и безграничного творческого полета. Создатели из Купертино представили во время своего выступления на WWDC 2023 5 июня действительно удачный продукт, который может вдохновить тысячи ценителей техники Apple на апгрейд старого девайса. Большой дисплей Liquid Retina, очень тонкий и 'тихий' дизайн, отличная продолжительность работы батареи и эффектная аудиосистема с шестью динамиками — в новинке есть все то, за что мы любим линейку Air. И даже чуть больше :)",
+                category: "laptops",
+        },
+        {
+                id: "7",
+                name: " Apple TV 4K",
+                price: "250$",
+                img: "https://i.allo.ua/media/catalog/product/cache/3/image/434x494/602f0fa2c1f0d1ba5e241f914e856ff9/a/p/apple-tv-4k-hero-select-202210_result_1.jpg",
+                description: "На весенней презентации в апреле 2021 компания Apple представила новое поколение медиаплееров Apple TV 4K. Телевизионная приставка получила обновление в виде мощного процессора A12 Bionic, уникальный пульт с новыми опциями, поддержку технологии Dolby Vision и усовершенствованные алгоритмы воспроизведения HDR-контента.",
+                category: "tv",
+        },
+        {
+                id: "8",
+                name: "Apple iPad Mini",
+                price: "700$",
+                img: "https://i.allo.ua/media/catalog/product/cache/3/image/434x494/602f0fa2c1f0d1ba5e241f914e856ff9/i/p/ipad_mini_q421_wi-fi_starlight_pdp_image_position-1b__ww-ru_1.jpg",
+                description: "Почувствуйте всю силу инновационных технологий, которая способна поместиться в вашей ладони. Лучшие дизайнеры и инженеры из Купертино полностью переосмыслили компактную модель фирменных планшетов из линейки Apple iPad mini 6. Шестое поколение миниатюрных планшетов получило стильный свежий дизайн, новый яркий экран на всю переднюю панель, мощный чип Apple A15 Bionic и поддержку стилуса Apple Pencil 2. Но это еще далеко не конец, а только мощный старт.",
+                category: "tablets",
+        },
+];
