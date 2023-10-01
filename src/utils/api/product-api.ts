@@ -11,14 +11,10 @@ interface ProductApi {
 
 export const productApi: ProductApi = {
   async getPhones() {
-    try {
       const response: AxiosResponse<IProduct[]> = await axios.get(`${BASE_URL}/api/products/phones`);
       const phones: IProduct[] = response.data;
 
       return phones;
-    } catch (err) {
-      throw new Error("error")
-    }
   },
 
   async getCurrentPhone(id: string) {
