@@ -1,5 +1,5 @@
 "use client"
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { LinkButton } from '@/components/Buttons/Buttons';
 import { useTabletQuery } from '@/utils/hooks/media-hooks';
 import { PreviewImg } from '../PreviewImg/PreviewImg';
@@ -7,6 +7,11 @@ import { PreviewTitle } from './PreviewTitle/PreviewTitle';
 
 export const PreviewContent: FC = () => {
     const tablet = useTabletQuery()
+
+    const [showTablet, setShowTablet] = useState(true);
+    useEffect(() => {
+        setShowTablet(tablet);
+    }, [tablet])
 
     return (
         <div className="preview__content">
@@ -18,7 +23,7 @@ export const PreviewContent: FC = () => {
                     reality — all while staying present in the world around you
                 </p>
             </div>
-            {tablet && <PreviewImg />}
+            {showTablet && <PreviewImg />}
             <LinkButton href='/' className='preview__button'>Pre-order Now</LinkButton>
         </div>
     );

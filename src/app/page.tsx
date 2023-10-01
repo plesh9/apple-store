@@ -5,12 +5,17 @@ import { Devices } from '@/components/Devices/Devices';
 import { Trailers } from '@/components/Trailers/Trailers';
 import { trailersApi } from '@/utils/api/trailers-api';
 
-export const fetchData = async () => {
-  const phones = await productApi.getPhones()
-  const devices = await productApi.getDevices()
-  const trailers = await trailersApi.getTrailers()
+const fetchData = async () => {
+  try {
+    const phones = await productApi.getPhones()
+    const devices = await productApi.getDevices()
+    const trailers = await trailersApi.getTrailers()
 
-  return { phones, devices, trailers }
+    return { phones, devices, trailers }
+  } catch (err) {
+    console.error(err);
+    return { phones: [], devices: [], trailers: [] };
+  }
 };
 
 const Home = async () => {

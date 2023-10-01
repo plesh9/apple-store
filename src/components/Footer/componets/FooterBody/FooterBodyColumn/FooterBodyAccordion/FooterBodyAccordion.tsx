@@ -1,3 +1,4 @@
+"use client"
 import { FC } from 'react';
 import { Accordion, AccordionItem } from '@szhsin/react-accordion';
 import { IFooterBodyItem } from '../../data';

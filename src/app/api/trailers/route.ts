@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
-import { NextApiRequest } from "next";
 import { trailers } from './data';
 
-export async function GET(req: NextApiRequest,) {
+export async function GET() {
   return NextResponse.json(trailers)
 }

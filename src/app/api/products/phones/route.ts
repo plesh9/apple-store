@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { NextApiRequest } from "next";
 import { phones } from './../data/phones';
 
-export async function GET(req: NextApiRequest,) {
+export async function GET() {
+  if (!phones) return NextResponse.error(); 
   return NextResponse.json(phones)
 }

@@ -1,3 +1,4 @@
+"use client"
 import { ITrailer } from '@/types';
 import { useMediaQuery } from '@/utils/hooks/media-hooks';
 import Image from 'next/image';
@@ -13,12 +14,16 @@ interface TrailerCardProps {
 export const TrailerCard: FC<TrailerCardProps> = ({ trailer, activeTrailer, handleClickTrailer }) => {
   const pc = useMediaQuery("(min-width: 62em)")
   const cardRef = useRef<HTMLLIElement | null>(null)
-  const [isActive, setisActive] = useState(cardRef.current?.id === activeTrailer)
-
+  const [isActive, setIsActive] = useState(cardRef.current?.id === activeTrailer)
 
   useEffect(() => {
-    setisActive(cardRef.current?.id === activeTrailer)
-  }, [activeTrailer]);
+    setIsActive(cardRef.current?.id === activeTrailer)
+  }, [activeTrailer, cardRef.current]);
+
+  const [showDesctop, SetShowDesctop] = useState(true);
+  useEffect(() => {
+    SetShowDesctop(pc);
+  }, [pc]);
 
   return (
     <li
@@ -35,9 +40,9 @@ export const TrailerCard: FC<TrailerCardProps> = ({ trailer, activeTrailer, hand
       />
       <div className='trailer-card__box'>
         <span className='trailer-card__title'>{trailer.title}</span>
-        {!pc || isActive ? <span className='trailer-card__subtitle'>Trailer</span> : ''}
+        {!showDesctop || isActive ? <span className='trailer-card__subtitle'>Trailer</span> : ''}
       </div>
-      {!pc || isActive ? <TrailerCardElements url={trailer.url} /> : ''}
+      {!showDesctop || isActive ? <TrailerCardElements url={trailer.url} /> : ''}
     </li>
   );
 };

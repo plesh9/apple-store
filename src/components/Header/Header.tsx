@@ -8,6 +8,11 @@ import { useTabletQuery } from '@/utils/hooks/media-hooks';
 export const Header: FC = () => {
   const tablet = useTabletQuery()
 
+  const [showTablet, setShowTablet] = useState(true);
+  useEffect(() => {
+      setShowTablet(tablet);
+  }, [tablet]);
+
   const [headerActive, setHeaderActive] = useState(false)
 
   const toggleVisible = () => {
@@ -21,6 +26,8 @@ export const Header: FC = () => {
   };
 
   useEffect(() => {
+    if (typeof window === "undefined") return
+
     window.addEventListener('scroll', toggleVisible);
     toggleVisible()
 
@@ -31,6 +38,8 @@ export const Header: FC = () => {
   }, [])
 
   useEffect(() => {
+    if (typeof window === "undefined") return
+
     if (headerActive) {
       document.documentElement.classList.add('header-active')
     } else {
@@ -41,7 +50,7 @@ export const Header: FC = () => {
   return (
     <header className='header'>
       <div className='header__container'>
-        {!tablet && <Menu />}
+        {!showTablet && <Menu />}
         <Logo className='header__logo' />
         <Panel />
       </div>

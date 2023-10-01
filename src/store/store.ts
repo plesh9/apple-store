@@ -1,3 +1,4 @@
+"use client"
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import productsSlise from './features/products-slise';
 

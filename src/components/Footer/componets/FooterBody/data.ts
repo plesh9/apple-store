@@ -8,7 +8,7 @@ export interface IFooterBodyItem {
     data: IFooterBodyLink[]
 }
 
-export const footerBodyColumns = [
+export const footerBodyColumns: IFooterBodyItem[][] = [
     [
         {
             title: "Shop & Learn",

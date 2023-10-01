@@ -1,3 +1,4 @@
+"use client"
 import { productApi } from '../../utils/api/product-api';
 import { FilterEnum, IProduct } from '../../types';
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
@@ -17,8 +18,12 @@ const initialState: phonesInitialState = {
 }
 
 export const fetchFilterDevices = createAsyncThunk('products/fetchFilterDevices', async ({ activeFilter }: { activeFilter: FilterEnum }) => {
-    const devices = await productApi.getDevices(activeFilter);
-    return { devices }
+    try {
+        const devices = await productApi.getDevices(activeFilter);
+        return { devices }
+    } catch (err) {
+        throw new Error("Error")
+    }
 });
 
 const slice = createSlice({

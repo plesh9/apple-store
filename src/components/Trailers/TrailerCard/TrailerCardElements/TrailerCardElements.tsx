@@ -1,3 +1,4 @@
+"use client"
 import { FC } from 'react';
 import { LinkButton } from '@/components/Buttons/Buttons';
 import YoutubeIcon from "@/assets/images/icons/youtube.svg"
