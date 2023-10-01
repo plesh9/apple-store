@@ -18,12 +18,8 @@ const initialState: phonesInitialState = {
 }
 
 export const fetchFilterDevices = createAsyncThunk('products/fetchFilterDevices', async ({ activeFilter }: { activeFilter: FilterEnum }) => {
-    try {
-        const devices = await productApi.getDevices(activeFilter);
-        return { devices }
-    } catch (err) {
-        throw new Error("Error")
-    }
+    const devices = await productApi.getDevices(activeFilter);
+    return { devices }
 });
 
 const slice = createSlice({
