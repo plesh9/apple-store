@@ -12,7 +12,7 @@ export interface IMenuItem {
 export const Menu: FC = () => {
 
   const menuList: IMenuItem[] = [
-    { title: 'Homesss', href: '/'  },
+    { title: 'Home', href: '/'  },
     { title: 'Products', href: '/', dropdown: true },
     { title: 'Entertainment', href: '/' },
     { title: 'Support', href: '/' },
