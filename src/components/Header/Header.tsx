@@ -8,7 +8,7 @@ import { useTabletQuery } from '@/utils/hooks/media-hooks';
 export const Header: FC = () => {
   const tablet = useTabletQuery()
 
-  const [showTablet, setShowTablet] = useState(true);
+  const [showTablet, setShowTablet] = useState(false);
   useEffect(() => {
       setShowTablet(tablet);
   }, [tablet]);

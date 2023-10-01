@@ -7,10 +7,10 @@ import { PreviewImg } from './PreviewImg/PreviewImg';
 export const Preview: FC = () => {
     const tablet = useTabletQuery()
 
-    const [showTablet, setShowTablet] = useState(true);
+    const [showTablet, setShowTablet] = useState(false);
     useEffect(() => {
-        setShowTablet(tablet);
-    }, [tablet])
+      setShowTablet(tablet);
+    },[tablet])
 
     return (
         <section className='preview'>

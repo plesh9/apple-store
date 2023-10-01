@@ -7,7 +7,7 @@ import { FooterBottomLinks } from './components/FooterBottomLinks/FooterBottomLi
 export const FooterBottom: FC = () => {
     const tablet = useTabletQuery()
 
-    const [showTablet, setShowTablet] = useState(true);
+    const [showTablet, setShowTablet] = useState(false);
     useEffect(() => {
         setShowTablet(tablet);
     }, [tablet]);

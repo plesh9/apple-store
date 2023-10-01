@@ -10,7 +10,7 @@ import { PanelBurger } from './PanelBurger/PanelBurger';
 export const Panel: FC = () => {
   const tablet = useTabletQuery()
 
-  const [showTablet, setShowTablet] = useState(true);
+  const [showTablet, setShowTablet] = useState(false);
   useEffect(() => {
     setShowTablet(tablet);
   },[tablet])

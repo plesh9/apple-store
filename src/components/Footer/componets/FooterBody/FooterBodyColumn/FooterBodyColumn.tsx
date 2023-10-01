@@ -12,7 +12,7 @@ interface FooterBodyColumnProps {
 export const FooterBodyColumn: FC<FooterBodyColumnProps> = ({ columns }) => {
     const mobile = useMobileQuery()
 
-    const [showMobile, setShowMobile] = useState(true);
+    const [showMobile, setShowMobile] = useState(false);
     useEffect(() => {
         setShowMobile(mobile);
     }, [mobile]);

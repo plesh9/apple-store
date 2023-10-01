@@ -8,7 +8,7 @@ import { PreviewTitle } from './PreviewTitle/PreviewTitle';
 export const PreviewContent: FC = () => {
     const tablet = useTabletQuery()
 
-    const [showTablet, setShowTablet] = useState(true);
+    const [showTablet, setShowTablet] = useState(false);
     useEffect(() => {
         setShowTablet(tablet);
     }, [tablet])
